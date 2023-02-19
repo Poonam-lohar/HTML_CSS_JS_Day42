@@ -84,7 +84,21 @@
         });
         console.log(text);
 
+       
+      // for Email validation
+        const email = document.querySelector("#email");
+        const emailError = document.querySelector(".email-error");
+        email.addEventListener("input", function () {
+            let emailRegex = RegExp(
+                "^[A-Z a-z 0-9]+([._+-][0-9 a-z A-Z]+)*@[0-9 a-z A-Z]+.[a-z A-Z]{2,3}([.][a-z A-Z]{2})*$"
+            );
+            if (emailRegex.test(email.value)) emailError.textContent = "";
+            else emailError.textContent = "Email is Incorrect!";
+        });
+        console.log(email);
+
         
+
         //Event listener for salary range
         const salary = document.querySelector('#salary');
         const output = document.querySelector('.salary-output');
