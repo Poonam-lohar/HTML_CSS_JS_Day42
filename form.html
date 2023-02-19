@@ -84,8 +84,17 @@
         });
         console.log(text);
 
-       
-      // for Email validation
+        //for password validation
+        const password = document.querySelector("#pwd");
+        const passwordError = document.querySelector(".pwd-error");
+        pwd.addEventListener("input", function () {
+            let passwordRegex = RegExp("^(?=[0-9 A-Z a-z !@#$%^&*();:]{8,}$)(?=.*[A-Z]{1,})(?=.*[0-9]{1,})(?=.*[!@#$%^&*();:]{1,}).*$");
+            if (passwordRegex.test(password.value)) passwordError.textContent = " ";
+            else passwordError.textContent = "Password is Incorrect!";
+        });
+        console.log(pwd);
+
+        // for Email validation
         const email = document.querySelector("#email");
         const emailError = document.querySelector(".email-error");
         email.addEventListener("input", function () {
