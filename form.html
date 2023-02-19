@@ -97,7 +97,15 @@
         });
         console.log(email);
 
-        
+        //for Mobile no.
+        const number = document.querySelector("#number");
+        const numberError = document.querySelector(".number-error");
+        number.addEventListener("input", function () {
+            let numberRegex = RegExp("^(0|91)?[\\s][0-9]{10}$");
+            if (numberRegex.test(number.value)) numberError.textContent = " ";
+            else numberError.textContent = "Number is Incorrect!";
+        });
+        console.log(number);
 
         //Event listener for salary range
         const salary = document.querySelector('#salary');
